@@ -1,3 +1,5 @@
+Link al repositorio: https://github.com/MarioGonzalo/Cuaderno-de-Ejercicios-2-Parte.git
+
 # Cuaderno-de-Ejercicios-2-Parte
 
 1. **Explicar sobre el siguiente grafo de red los conceptos de circuito virtual entre el nodo 10 y el 6, y datagrama entre el nodo 3 y el 6.**  
