@@ -156,6 +156,68 @@ Se realiza el proceso de inundación para propagar un paquete desde el nodo 5 ha
 
 4. **Diseñar las tablas de rutado jerárquico de la siguiente red.**
 
+## Diseño de las tablas de enrutamiento jerárquico de la red
+
+Se han creado cuatro subredes (A, B, C y D), cada una con su propia tabla de rutas. Las rutas se clasifican en dos tipos: locales (dentro de la misma subred) y jerárquicas (hacia otras subredes).
+
+---
+
+### Subred A (arriba izquierda)
+
+- Para la comunicación local dentro de la subred A, las rutas son:
+  - De A1 a A2: se envía directamente de A1 a A2.
+  - De A3 a A4: se envía directamente de A3 a A4.
+  - De A2 a A3: el paquete sigue la ruta A2 → A5 → A3.
+  - De A1 a A4: se envía por la ruta A1 → A5 → A4.
+  - De A1 a A3: la ruta es directa, A1 → A3.
+  - De A2 a A4: se envía directo A2 → A4.
+  - Para llegar a A5 desde A1 o A2 o A3 o A4, se utiliza el camino directo correspondiente (por ejemplo, A1 → A5).
+
+- Para acceder a otras subredes:
+  - Para la subred B, los paquetes salen por A4 hacia B3.
+  - Para la subred C, la salida es desde A4 hacia C2.
+  - Para la subred D, el paquete pasa de A4 a C2 y luego a D1.
+
+---
+
+### Subred B (arriba derecha)
+
+- Rutas locales dentro de B:
+  - B1 a B2: comunicación directa.
+  - B2 a B4: enlace directo.
+  - B3 a B4 y B3 a B1 también son enlaces directos.
+  
+- Para salir hacia otras subredes:
+  - Para llegar a la subred A, se pasa por B3 hacia A4.
+  - Para la subred D, la ruta es B4 → D2.
+  - Para la subred C, los paquetes van de B3 a A4 y luego a C2.
+
+---
+
+### Subred C (abajo izquierda)
+
+- Rutas locales dentro de C:
+  - C1 a C2, C1 a C3 y C1 a C4 tienen rutas directas.
+  - C2 a C3 y C2 a C4 también son directas, al igual que C3 a C4.
+  
+- Para acceder a otras subredes:
+  - Para llegar a la subred A, se sale de C2 hacia A4.
+  - Para la subred B, el camino es C2 → A4 → B3.
+  - Para la subred D, se utiliza la ruta directa C2 → D1.
+
+---
+
+### Subred D (abajo derecha)
+
+- Rutas locales dentro de D incluyen:
+  - Comunicaciones directas entre D1-D2, D1-D3, D2-D4, D3-D4, y también D5 con D2, D3 y D4.
+  
+- Para salir hacia otras subredes:
+  - Para la subred B, se pasa de D2 a B4.
+  - Para la subred C, la ruta es D1 → C2.
+  - Para la subred A, el paquete se envía de D1 a C2 y luego a A4.
+
+
 5. **En un sistema con las siguientes características, indicar las máscaras utilizadas, la primera y última dirección de los equipos, y los elementos/dispositivos necesarios:**
    - 7900 profesionales con datos sensibles.
    - 54 subredes para sensorización (100 sensores por subred).
